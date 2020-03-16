@@ -93,6 +93,23 @@ if True:
     pass
 else:
     pass
+    
+    
+total = 0
+while True:
+    response = input("Enter the next number - leave blank to end ")
+    if response == " ":
+        break
+    total += int(response)
+    
+print("The total of the numbers you entered is ", total)
+
+while True:
+    #play_the_game_once()
+    response = input("Play again? (yes or no)")
+    if response != "yes":
+        break
+print("Goodbye!")
 """
 
 #Exercise 1
@@ -190,14 +207,119 @@ test2 = is_t_rectagle(3,4,6)
 print(test2)
 """
 #Exercise 11 (or 1 pag 60)
-
+"""
 for _ in range(1000):
     print("We like Python's turtle!")      
     #that was exciting -.-
-  
+"""  
 #Exercise 12 (or 2 pag 60)
-
+"""
 for month in ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"]:
     print("One of the months of the year is " + month)
+"""
+
+#Exercise 14 (or 4 pag 60)
+"""
+numbers = [12,10,32,3,66,17,42,99,20]
+
+total_sum = 0
+total_mul = 1
+
+for x in numbers:
+    print(x, x**0.5, "\n")
+    total_sum += x
+    total_mul = total_mul*x
+
+print(total_sum, "\t", total_mul)
+"""
+
+#Exercise wtf_I_guess_we_dont_use_numbers pag 61
+"""
+def play_list_n(numbers):
+    count = 0
+    total_sum_even = 0
+    for n in numbers:
+        if n % 2 == 1:
+            count += 1
+        else:
+            total_sum_even += n 
+    return(count, total_sum_even)       
+    
+
+numbers = [12,10,32,3,66,17,42,99,20]
+
+o = play_list_n(numbers)
+print(o)
 
 
+def sum_neg(numbers):
+    total = 0
+    for n in numbers:
+        if n<0:
+            total += n
+    return(total)
+            
+numbers1 = [12,-10,32,3,66,-17,42,99,-20]
+    
+x = sum_neg(numbers1)
+print(x)
+
+
+def len_5(words):
+    count = 0
+    for w in words:
+        if len(w) == 5:
+            count += 1
+    return(count)
+
+words = ["banana", "penguin", "lacca", "crepa", "ecco!"]
+
+x = len_5(words)
+print(x)
+
+def sum_up(numbers):
+    total = 0
+    for n in numbers:
+        if n%2 == 0:
+            break
+        else:
+            total += n
+    return(total)
+
+numbers = [11,15,33,3,17,99,23]
+
+x = sum_up(numbers)
+print(x)
+
+def is_prime(n):
+    for i in range(2,int(n/2)+1):
+        if n%i==0:
+            print(False)
+            break
+    else:
+        print(True)
+        
+x = 9
+is_prime(x)
+
+def even_digit(n):
+    count = 0
+    while n > 0:
+        x = n%10
+        if x%2 == 0:
+            count += 1 
+        n = n//10
+    print(count)
+        
+even_digit(1023452)
+
+
+def sum_square(numbers):
+    total = 0
+    for n in numbers:
+        total += n**2
+    print(total)
+
+numbers = [2,5,4,1]
+sum_square(numbers)
+"""
