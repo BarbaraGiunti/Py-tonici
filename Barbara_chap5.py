@@ -96,7 +96,7 @@ def is_palindrome(string):
 print(is_palindrome("abba"))
 print(is_palindrome("tenet"))
 print(is_palindrome("sator"))
-""" 
+ 
 
 def count_letters(tuple_arg):
     count = 0
@@ -107,5 +107,147 @@ def count_letters(tuple_arg):
     return(count)
 
 print(count_letters(("banana", "n"))) 
+
+
+import string
+
+text = input("Insert your favorite text into triple quote")
+
+
+def remove_punctuation(phrase):
+    phrase_sans_punct = ""
+    for letter in phrase:
+        if letter not in string.punctuation:
+            phrase_sans_punct += letter
+    
+    return phrase_sans_punct
+
+split_text = remove_punctuation(text).split()
+
+def count_e(split_text):
+    count = 0
+    for word in split_text:
+        if "e" in word:
+            count += 1
+            
+    return count
+
+e_text = count_e(split_text)
+
+percent = 100*e_text/len(split_text)
+
+print("Your text contains ", len(split_text), "words, of which ", e_text, "(",percent,"%) contain an 'e'.")
+
+
+def add_vectors(v1,v2):
+    v = []
+    if len(v1)==len(v2):
+        for i in range(len(v1)):
+            v += [v1[i] + v2[i]]
+    else:
+        print("I cannot add apples and pears!")
+    
+    return v
+
+v1 = [1,2,1]
+v2 = [1,4,3]
+
+v = add_vectors(v1,v2)
+print(v)
+
+
+def scalar_mult(s,v):
+    v1 = []
+    for i in range(len(v)):
+            v1 += [s*v[i]]
+ 
+    return v1
+
+print(scalar_mult(5,[1,2]))
+print(scalar_mult(3,[1,0,-1]))
+print(scalar_mult(7,[3,0,5,11,2]))
+
+
+
+def dot_product(v1,v2):
+    result = 0
+    if len(v1)==len(v2):
+        for i in range(len(v1)):
+            result += v1[i] * v2[i]
+    else:
+        print("I cannot add apples and pears!")
+    
+    return result
+
+print(dot_product([1,1],[1,1]))
+print(dot_product([1,2],[1,4]))
+print(dot_product([1,2,1],[1,4,3]))
+
+"""
+
+def occurrency(string):
+    string = string.lower()
+
+    letter_counts = {}
+    for letter in string:
+        if letter != " ":
+            letter_counts[letter] =  letter_counts.get(letter, 0) + 1
+        
+    
+    letter_items = list(letter_counts.items())
+    letter_items.sort()
+    
+    print(letter_items)
+
+
+string = "ThiS is String with Upper and lower case Letters"
+
+occurrency(string)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
