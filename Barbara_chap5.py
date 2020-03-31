@@ -5,6 +5,8 @@ Created on Tue Mar 24 14:15:49 2020
 @author: utente
 """
 
+import numpy as np
+
 """
 def find2(haystack, needle, start):
     for index, letter in enumerate(haystack[start:]):
@@ -183,7 +185,7 @@ print(dot_product([1,1],[1,1]))
 print(dot_product([1,2],[1,4]))
 print(dot_product([1,2,1],[1,4,3]))
 
-"""
+
 
 def occurrency(string):
     string = string.lower()
@@ -206,14 +208,34 @@ occurrency(string)
 
 
 
+CHAP 6
+
+a = np.array([23,4,140], dtype='uint8')
+
+a += 100
+
+"""
 
 
+a = np.array([230,10,284,39,76])
 
-
-
-
-
-
+while True:
+    a[a<100] = a[a<100]*2
+    
+    count = 0
+    for i in a:
+        if i >= 100:
+            count += 1
+        else:
+            count = 0
+            break
+        
+    if count == 5:
+        break
+    
+c = a[a>150]
+d = c[c<200]
+print(d)
 
 
 
